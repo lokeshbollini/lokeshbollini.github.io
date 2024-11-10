@@ -3397,8 +3397,12 @@ input, select, textarea {
 			text-align: center;
 		}
 
-		#intro + #header {
-			margin-top: -20rem;
+		#intro + #header .logo {
+    transform: translateY(0); /* Remove or set to a smaller value for desired positioning */
+    opacity: 1; /* Make it fully visible */
+    visibility: visible; /* Ensure it is visible */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Optional: add smooth transition for appearance */
+}
 		}
 
 			#intro + #header .logo {
