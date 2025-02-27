@@ -12,7 +12,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Your Name</div>
+                <div class="logo">Portfolio</div>
                 <ul class="nav-links">
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -33,7 +33,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Hi, I'm <span class="highlight">Lokesh Bollini</span></h1>
-                <h2>I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+                <h2>I'm <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
                 <p>Data Analyst & Business Intelligence Specialist with expertise in SQL, Tableau, and ETL automation.</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn primary">View My Work</a>
@@ -46,8 +46,48 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://via.placeholder.com/400" alt="Lokesh Bollini">
-            </div>
+                <div class="portfolio-gallery">
+                    <div class="gallery-item active">
+                        <img src="assets/main/DB7.png" alt="Portfolio Work 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/main/Risk ranking model.png" alt="Portfolio Work 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/main/Tableau dashboards.png" alt="Portfolio Work 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/main/Acrehub1.png" alt="Portfolio Work 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/main/erd.jpeg" alt="Portfolio Work 5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/main/DFD.png" alt="Portfolio Work 6">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/main/DB5.png" alt="Portfolio Work 7">
+                    </div>
+                    <div class="gallery-item active">
+                        <img src="assets/main/DB1.png" alt="Portfolio Work 8">
+                    </div>
+                    <div class="gallery-item active">
+                        <img src="assets/main/DB6.png" alt="Portfolio Work 9">
+                    </div>
+                    <div class="gallery-item active">
+                        <img src="assets/main/db10.png" alt="Portfolio Work 10">
+                    </div>
+                    <div class="gallery-item active">
+                        <img src="assets/main/DB4.png" alt="Portfolio Work 11">
+                    </div>
+                    <div class="gallery-item active">
+                        <img src="assets/main/Reporting system(ETL).png" alt="Portfolio Work 12">
+                    </div>
+                    <div class="nav-arrow prev">&#10094;</div>
+                    <div class="nav-arrow next">&#10095;</div>
+                </div>
+            </div>            
+            
         </div>
     </section>
     
@@ -57,7 +97,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://via.placeholder.com/300" alt="Lokesh Bollini">
+                    <img src="assets/Gif.gif" alt="Lokesh Bollini">
                 </div>
                 <div class="about-text">
                     <h3>Who am I?</h3>
@@ -202,6 +242,7 @@
                 <button class="filter-btn" data-filter="etl">ETL & Pipelines</button>
                 <button class="filter-btn" data-filter="viz">Data Visualization</button>
                 <button class="filter-btn" data-filter="pub">Research Publication</button>
+                <button class="filter-btn" data-filter="case">Case Studies</button>
             </div>
             <div class="projects-grid">
                 <div class="project-card" data-category="data etl">
@@ -209,8 +250,8 @@
                         <img src="assets/Retail analytics.webp" alt="Automated Reporting System">
                     </div>
                     <div class="project-info">
-                        <h3>Automated Reporting System</h3>
-                        <p>Developed a robust ETL pipeline using Talend and Python scripts to automate reporting, eliminating 200+ hours of manual work per month.</p>
+                        <h3>Automated ETL Reporting Pipeline</h3>
+                        <p>Developed an automated ETL pipeline using Talend and Python to streamline reporting processes, saving over 200+ hours of manual effort.</p>
                         <div class="project-tags">
                             <span>Talend</span>
                             <span>SQL</span>
@@ -228,8 +269,8 @@
                         <img src="assets/Reporting system(ETL).png" alt="Retail Analytics System">
                     </div>
                     <div class="project-info">
-                        <h3>Retail Analytics System</h3>
-                        <p>Designed and implemented a MySQL-based retail data warehouse (star schema) with ETL process for faster data retrieval and dynamic dashboards.</p>
+                        <h3>Retail Data Warehouse with Star Schema</h3>
+                        <p>Designed and implemented a MySQL-based retail data warehouse using a star schema to optimize data retrieval and reporting workflows.</p>
                         <div class="project-tags">
                             <span>MySQL</span>
                             <span>ETL</span>
@@ -237,18 +278,18 @@
                             <span>Tableau</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/lokeshbollini/Retail-Analytics-System" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="https://github.com/lokeshbollini/ETLpipeline" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card" data-category="ml">
+                <div class="project-card" data-category="ml case">
                     <div class="project-image">
                         <img src="assets/Risk ranking model.png" alt="Risk Ranking Model">
                     </div>
                     <div class="project-info">
-                        <h3>Risk Ranking Model</h3>
-                        <p>Random Forest-based risk-ranking model using Python and SQL to identify profitable renovation opportunities.</p>
+                        <h3>Historic Property Risk Analysis Using Machine Learning</h3>
+                        <p>Conducted Exploratory Data Analysis (EDA) on Buffalo city data and built machine learning models to assess property risks.</p>
                         <div class="project-tags">
                             <span>Python</span>
                             <span>ML Models</span>
@@ -266,8 +307,8 @@
                         <img src="assets/Research pub.png" alt="Research Publication: IS Auditing in Modernizing Legacy Systems">
                     </div>
                     <div class="project-info">
-                        <h3>Research Publication: IS Auditing in Modernizing Legacy Systems</h3>
-                        <p>Exploratory data analysis of seller trends using AWS QuickSight to identify and reduce fraudulent transactions.</p>
+                        <h3>Research Publication: Auditing Legacy Systems with Salesforce</h3>
+                        <p>The research emphasizes the role of cloud platforms in improving data governance, regulatory compliance, and decision-making while reducing operational costs.</p>
                         <div class="project-tags">
                             <span>Cloud</span>
                             <span>IT Audit</span>
@@ -275,7 +316,7 @@
                             <span>SOX</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/lokeshbollini/Amazon-Seller-Analysis" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="https://www.igi-global.com/chapter/is-auditing-in-modernizing-legacy-systems-using-salesforce/358656" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -285,8 +326,8 @@
                         <img src="assets/Tableau dashboards.png" alt="Tableau Dashboards">
                     </div>
                     <div class="project-info">
-                        <h3>Tableau Public Dashbaords</h3>
-                        <p>Tableau dashboards covering different datasets and KPI's using open source datasets</p>
+                        <h3>Interactive Tableau Dashboards</h3>
+                        <p>Created interactive dashboards using Tableau Public to visualize key performance indicators (KPIs) across multiple datasets.</p>
                         <div class="project-tags">
                             <span>Tableau</span>
                             <span>SQL</span>
@@ -294,32 +335,31 @@
                             <span>Reports</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/lokeshbollini/Financial-Reporting" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="https://public.tableau.com/app/profile/lokesh.bollini/vizzes" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="pub">
+                <div class="project-card" data-category="pub case">
                     <div class="project-image">
                         <img src="assets/pub.webp" alt="Case Studies">
                     </div>
                     <div class="project-info">
-                        <h3>Case Studies: ISACA</h3>
-                        <p>Conducted 5 ISACA case studies on Governance,risk,compliance frameworks and test internal controls and how IT audit is conducted across different domains, including Banking, Software, manufacturing etc.
-                        </p>
+                        <h3>ISACA Case Studies: IT Governance & Risk Frameworks</h3>
+                        <p>Conducted five detailed case studies on IT governance, risk, and compliance frameworks, focusing on internal controls and IT audit practices.</p>
                         <div class="project-tags">
-                            <span>Tableau</span>
-                            <span>SQL</span>
+                            <span>Risk</span>
                             <span>Data Analysis</span>
-                            <span>Reports</span>
+                            <span>Compliance</span>
+                            <span>Audit</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/lokeshbollini/Financial-Reporting" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="https://github.com/lokeshbollini/ISACA-Case-Studies" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card" data-category="data">
+      <!--          <div class="project-card" data-category="data">
                     <div class="project-image">
                         <img src="Google analytics certification (1).png" alt="Inventory Forecasting System">
                     </div>
@@ -334,12 +374,12 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/lokeshbollini/Inventory-Forecasting" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-                        </div>
-                    </div>
-                </div>
+                        </div> 
+                    </div> 
+                </div> -->
             </div>
         </div>
-    </section>
+    </section> 
     
 
     <section id="contact" class="contact">

@@ -11,6 +11,92 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Portfolio Gallery
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let currentIndex = 0;
+    let interval; // Declare interval here
+
+    // Add counter elements
+    const currentCounter = document.querySelector('.gallery-counter .current');
+    const totalCounter = document.querySelector('.gallery-counter .total');
+
+    // Update total count
+    if (totalCounter) {
+        totalCounter.textContent = galleryItems.length;
+    }
+
+    // Function to show a specific image
+    function showImage(index) {
+        galleryItems.forEach(item => {
+            item.classList.remove('active', 'previous');
+            if (item.classList.contains('active')) {
+                item.classList.add('previous');
+            }
+        });
+        
+        galleryItems[index].classList.add('active');
+        currentIndex = index;
+        
+        // Update counter
+        if (currentCounter) {
+            currentCounter.textContent = currentIndex + 1;
+        }
+    }
+
+    // Set the interval for automatic image rotation
+    interval = setInterval(() => {
+        let nextIndex = (currentIndex + 1) % galleryItems.length;
+        showImage(nextIndex);
+    }, 4000); // Change to 4000 milliseconds (4 seconds)
+
+    // Arrow navigation
+    const prevArrow = document.querySelector('.nav-arrow.prev');
+    const nextArrow = document.querySelector('.nav-arrow.next');
+
+    if (prevArrow) {
+        prevArrow.addEventListener('click', () => {
+            clearInterval(interval);
+            let prevIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            showImage(prevIndex);
+            interval = setInterval(() => {
+                let nextIndex = (currentIndex + 1) % galleryItems.length;
+                showImage(nextIndex);
+            }, 4000); // Restart rotation after manual navigation
+        });
+    }
+
+    if (nextArrow) {
+        nextArrow.addEventListener('click', () => {
+            clearInterval(interval);
+            let nextIndex = (currentIndex + 1) % galleryItems.length;
+            showImage(nextIndex);
+            interval = setInterval(() => {
+                let nextIndex = (currentIndex + 1) % galleryItems.length;
+                showImage(nextIndex);
+            }, 4000); // Restart rotation after manual navigation
+        });
+    }
+
+    // Start the rotation
+    if (galleryItems.length > 0) {
+        showImage(0); // Show first image immediately
+    }
+
+    // Pause rotation on hover
+    const gallery = document.querySelector('.portfolio-gallery');
+    if (gallery) {
+        gallery.addEventListener('mouseenter', () => {
+            clearInterval(interval);
+        });
+        
+        gallery.addEventListener('mouseleave', () => {
+            interval = setInterval(() => {
+                let nextIndex = (currentIndex + 1) % galleryItems.length;
+                showImage(nextIndex);
+            }, 4000);
+        });
+    }
+
     // Close mobile menu when clicking a nav link
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
@@ -27,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cursorSpan = document.querySelector('.cursor');
     
     if (typedTextSpan) {
-        const textArray = ['Data Analyst','Problem Solver', 'BI Specialist', 'SQL Expert','ETL Developer','Machine Learning Enthusiast'];
+        const textArray = ['an Analyst','a Problem Solver', 'a BI Specialist', 'a SQL Expert','an ETL Developer','an Innovator'];
         const typingDelay = 100;
         const erasingDelay = 50;
         const newTextDelay = 1000; // Delay between current and next text
@@ -81,10 +167,13 @@ document.addEventListener('DOMContentLoaded', function() {
             projectCards.forEach(card => {
                 if (filter === 'all') {
                     card.style.display = 'block';
-                } else if (card.getAttribute('data-category') === filter) {
-                    card.style.display = 'block';
                 } else {
-                    card.style.display = 'none';
+                    const categories = card.getAttribute('data-category').split(' ');
+                    if (categories.includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 }
             });
         });
@@ -307,6 +396,7 @@ document.head.insertAdjacentHTML('beforeend', `
     .projects-grid {
         grid-template-columns: 1fr;
     }
+        
 }
 </style>
 `);

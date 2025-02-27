@@ -197,7 +197,10 @@ nav {
 
 .hero-image {
     flex: 1;
-    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image img {
@@ -257,6 +260,109 @@ nav {
     color: white;
     transform: translateY(-3px);
 }
+
+/* Adjust the size of the portfolio gallery for a responsive rectangle */
+.portfolio-gallery {
+    position: relative;
+    width: 90%; /* Use a percentage for responsiveness */
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    aspect-ratio: 16/9; /* Wider aspect ratio for a rectangular look */
+    overflow: hidden;
+    margin: 20px auto; /* Center the carousel vertically and horizontally */
+    transform: translateX(30%); /* Move the carousel slightly to the right */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: var(--light-color); /* Existing light blue shade */
+}
+
+/* Ensure images fit properly */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images cover the container while maintaining aspect ratio */
+    background-color: #f5f8ff; /* Fallback background color */
+    padding: 10px; /* Optional padding */
+}
+
+.gallery-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;  /* Better than display:none for transitions */
+    transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+    transform: translateX(100%); /* Start from right */
+}
+
+.gallery-item.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* Slide to center */
+}
+
+/* Previous slide animation */
+.gallery-item.previous {
+    transform: translateX(-100%); /* Exit to left */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.gallery-nav {
+    position: absolute;
+    bottom: 30px;  /* Moved up slightly */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 2;
+    padding: 12px 20px;  /* Increased padding */
+    background-color: rgba(0, 0, 0, 0.1);  /* Darker background */
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  /* Added shadow */
+}
+
+/* Image Carousel Styles */
+.image-carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+    display: flex;
+    width: 400%; /* For 4 images (100% × number of images) */
+    animation: carousel 15s linear infinite;
+}
+
+.carousel-slide {
+    width: 25%; /* 100% divided by number of images */
+    flex-shrink: 0;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes carousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-75%); /* For 3 unique images + 1 duplicate */
+    }
+}
+
+/* Optional: Pause animation on hover */
+.image-carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
 
 /* About Section */
 .about {
@@ -412,7 +518,9 @@ nav {
 }
 
 .filter-btn {
-    padding: 8px 20px;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    margin: 0 5px;  /* Add some spacing between buttons */
     border-radius: 50px;
     border: 1px solid var(--border-color);
     background-color: transparent;
@@ -571,4 +679,28 @@ nav {
     padding: 15px;
     border: 1px solid var(--border-color);
     border-radius: 10px;
+}
+
+/* Navigation Arrows Styles */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 10;
+    user-select: none; /* Prevent text selection */
+}
+
+.nav-arrow.prev {
+    left: 10px; /* Position left arrow */
+}
+
+.nav-arrow.next {
+    right: 10px; /* Position right arrow */
+}
+
+.nav-arrow:hover {
+    color: #3a57d7; /* Change color on hover */
 }
