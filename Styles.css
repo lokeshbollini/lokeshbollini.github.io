@@ -33,6 +33,11 @@ h1, h2, h3, h4, h5, h6, .section-title, .logo {
     font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
 a {
     text-decoration: none;
     color: var(--primary-color);
@@ -703,4 +708,23 @@ nav {
 
 .nav-arrow:hover {
     color: #3a57d7; /* Change color on hover */
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #A45DBF, #FF6F91, #6A82FB);
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* Vendor prefix for Safari */
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 3s ease infinite;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
