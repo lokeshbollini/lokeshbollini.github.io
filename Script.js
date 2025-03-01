@@ -285,6 +285,25 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkIfInView);
     window.addEventListener('load', checkIfInView);
 });
+// google tracking for scrolling
+document.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const pageHeight = document.body.offsetHeight;
+  
+    if (scrollPosition >= pageHeight * 0.25) {
+      gtag('event', 'scroll', { 'event_category': 'Page Interaction', 'event_label': '25% Scroll' });
+    }
+    if (scrollPosition >= pageHeight * 0.5) {
+      gtag('event', 'scroll', { 'event_category': 'Page Interaction', 'event_label': '50% Scroll' });
+    }
+    if (scrollPosition >= pageHeight * 0.75) {
+      gtag('event', 'scroll', { 'event_category': 'Page Interaction', 'event_label': '75% Scroll' });
+    }
+    if (scrollPosition >= pageHeight) {
+      gtag('event', 'scroll', { 'event_category': 'Page Interaction', 'event_label': '100% Scroll' });
+    }
+  });
+  
 
 // Add CSS for the cursor animation
 document.head.insertAdjacentHTML('beforeend', `

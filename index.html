@@ -57,8 +57,17 @@
                     <a href="#contact" class="btn secondary">Contact Me</a>
                 </div>
                 <div class="social-icons">
-                    <a href="https://github.com/lokeshbollini" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/lokeshbollini/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <!-- GitHub Link -->
+                    <a href="https://github.com/lokeshbollini" target="_blank"
+                       onclick="gtag('event', 'click', { 'event_category': 'Social', 'event_label': 'GitHub Profile' });">
+                        <i class="fab fa-github"></i>
+                    </a>
+                
+                    <!-- LinkedIn Link -->
+                    <a href="https://www.linkedin.com/in/lokeshbollini/" target="_blank"
+                       onclick="gtag('event', 'click', { 'event_category': 'Social', 'event_label': 'LinkedIn Profile' });">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
                     <a href="mailto:bollinilokesh3@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -243,7 +252,10 @@
                 </div>
             </div>
             <div class="resume-download">
-                <a href="assets/Resume.pdf" class="btn primary"target="_blank"><i class="fas fa-download"></i> Download Resume</a>
+                <a href="assets/Resume.pdf" class="btn primary" target="_blank" 
+                   onclick="gtag('event', 'click', { 'event_category': 'Resume', 'event_label': 'Download Resume' });">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
             </div>
         </div>
     </section>
@@ -276,9 +288,12 @@
                             <span>Tableau</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/lokeshbollini/Automated-Reporting-System" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            <!-- Project 1 -->
+                            <a href="https://github.com/lokeshbollini/Automated-Reporting-System" target="_blank"
+                               onclick="gtag('event', 'click', { 'event_category': 'GitHub', 'event_label': 'Automated Reporting System' });">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
                         </div>
-                    </div>
                 </div>
                 
                 <div class="project-card" data-category="etl">
