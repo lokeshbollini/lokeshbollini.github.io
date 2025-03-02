@@ -757,27 +757,32 @@ nav {
 
 .case-study-item {
     display: flex;
-    align-items: center; /* Center the items vertically */
-    margin-bottom: 20px;
+    align-items: center;
+    width: 100%;
 }
 
 .case-study-image {
-    flex: 0 0 200px; /* Fixed width for the image */
-    margin-right: 20px; /* Space between image and content */
-    text-align: center; /* Center the image */
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 0;
 }
 
 .case-study-image img {
-    width: 100%; /* Make the image responsive */
-    max-height: 200px; /* Set a maximum height for the image */
-    object-fit: contain; /* Ensure the image maintains its aspect ratio */
-    border-radius: 8px; /* Optional: rounded corners */
+    width: 100%;
+    height: auto;
+}
+
+.separator {
+    width: 1px;
+    background-color: #ccc;
+    height: 100%;
+    margin-left: 20px;
 }
 
 .case-study-content {
-    flex: 1; /* Take the remaining space */
-    border-left: 2px solid #ccc; /* Thin separating line */
-    padding-left: 20px; /* Space between line and content */
+    flex: 1;
+    border-left: 2px solid #ccc;
+    padding-left: 20px;
 }
 
 .case-study h2 {
