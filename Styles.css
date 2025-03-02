@@ -22,10 +22,11 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--light-color);
+    background-color: #f9f9f9;
+    padding-top: 80px;
 }
 
 /* Add the heading styles right here */
@@ -58,9 +59,8 @@ img {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 80%;
+    margin: auto;
 }
 
 .section-title {
@@ -120,13 +120,19 @@ img {
 
 /* Header */
 header {
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 6px 0;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: padding 0.3s ease;
+}
+
+header.shrink {
+    padding: 1px 0;
 }
 
 nav {
@@ -143,29 +149,40 @@ nav {
 }
 
 .nav-links {
-    display: flex;
-    gap: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
 }
 
 .nav-links a {
-    color: var(--dark-color);
-    font-weight: 500;
+    text-decoration: none;
+    color: #333;
     position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
 }
 
 .nav-links a::after {
     content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
+    display: block;
     height: 2px;
-    background-color: var(--primary-color);
-    transition: var(--transition);
+    background: #007bff;
+    width: 0;
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links a:hover::after {
     width: 100%;
 }
 
@@ -727,4 +744,82 @@ nav {
     100% {
         background-position: 100% 50%;
     }
+}
+
+/* Case Study styles */
+.case-study {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.case-study-item {
+    display: flex;
+    align-items: center; /* Center the items vertically */
+    margin-bottom: 20px;
+}
+
+.case-study-image {
+    flex: 0 0 200px; /* Fixed width for the image */
+    margin-right: 20px; /* Space between image and content */
+    text-align: center; /* Center the image */
+}
+
+.case-study-image img {
+    width: 100%; /* Make the image responsive */
+    max-height: 200px; /* Set a maximum height for the image */
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+.case-study-content {
+    flex: 1; /* Take the remaining space */
+    border-left: 2px solid #ccc; /* Thin separating line */
+    padding-left: 20px; /* Space between line and content */
+}
+
+.case-study h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.case-study h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.case-study ul {
+    list-style: none;
+    padding: 0;
+}
+
+.case-study ul li {
+    margin-bottom: 10px;
+}
+
+.case-study .btn.download {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.case-study .btn.download:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
