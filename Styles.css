@@ -828,3 +828,109 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* General styles for larger screens */
+.case-study-item {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center the items */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .case-study-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .case-study-image {
+        display: none; /* Hide the image on mobile */
+    }
+
+    .case-study-content {
+        width: 100%; /* Allow content to take full width */
+    }
+
+    .menu {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+        width: 100%; /* Full width */
+        background-color: white; /* Background color for visibility */
+        padding: 10px; /* Add padding */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    }
+
+    .menu-item {
+        margin: 10px 0; /* Space between menu items */
+        font-size: 18px; /* Adjust font size for readability */
+        width: 100%; /* Full width for touch targets */
+        text-align: left; /* Align text to the left */
+    }
+
+    .menu .close-button {
+        align-self: flex-end; /* Position close button at the top right */
+        margin-bottom: 10px; /* Space below the close button */
+    }
+
+    .nav-links {
+        display: none; /* Hide the default menu */
+        position: fixed; /* Fix the menu to the top */
+        top: 0;
+        right: 0;
+        width: 70%; /* Width of the mobile menu */
+        height: 100vh; /* Full height */
+        background-color: white; /* Background color */
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+        padding: 20px; /* Add padding */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        transition: transform 0.3s ease; /* Smooth transition */
+        transform: translateX(100%); /* Start off-screen */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the menu when active */
+        transform: translateX(0); /* Slide in */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+        flex-direction: column; /* Stack lines */
+        cursor: pointer; /* Pointer cursor */
+    }
+
+    .hamburger span {
+        height: 3px; /* Line height */
+        width: 25px; /* Line width */
+        background-color: #333; /* Line color */
+        margin: 4px 0; /* Space between lines */
+        transition: all 0.3s ease; /* Smooth transition */
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); /* Top line */
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0; /* Middle line */
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px); /* Bottom line */
+    }
+
+    .menu-item {
+        margin: 15px 0; /* Space between menu items */
+        font-size: 18px; /* Font size */
+        color: #333; /* Text color */
+        text-decoration: none; /* Remove underline */
+    }
+
+    .close-button {
+        align-self: flex-end; /* Position close button at the top right */
+        font-size: 24px; /* Size of close button */
+        background: none; /* No background */
+        border: none; /* No border */
+        cursor: pointer; /* Pointer cursor */
+    }
+}

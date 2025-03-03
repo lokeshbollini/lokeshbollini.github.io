@@ -3,11 +3,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+    const closeButton = document.querySelector('.close-button');
     
     if (hamburger) {
         hamburger.addEventListener('click', function() {
             this.classList.toggle('active');
             navLinks.classList.toggle('active');
+        });
+    }
+    
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
         });
     }
     
