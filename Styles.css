@@ -202,6 +202,7 @@ nav {
 
 /* Hero Section */
 .hero {
+    position: relative;
     padding: 150px 0 100px;
     background-color: #f5f8ff;
 }
@@ -933,4 +934,34 @@ footer {
         border: none; /* No border */
         cursor: pointer; /* Pointer cursor */
     }
+}
+
+.notification-banner {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    text-align: center; /* Centered text */
+    padding: 10px 5px; /* Adjust padding as needed */
+    position: absolute; /* Change to absolute */
+    top: 0; /* Position it at the top of the hero section */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    z-index: 1200; /* Ensure it appears above other content */
+    font-size: 12px; /* Normal font size */
+    line-height: 1; /* Adjust line height for better spacing */
+}
+
+.notification-banner {
+    font-size: 15px; /* Increase font size if needed */
+    line-height: 0.2; /* Increase line height for better spacing */
+}
+/* Optional: Close button styling */
+.notification-banner .close-btn {
+    position: absolute; /* Position the close button */
+    right: 10px; /* Align to the right */
+    top: 10px; /* Align to the top */
+    background: none; /* No background */
+    border: none; /* No border */
+    color: white; /* White text */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
 }
