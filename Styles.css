@@ -651,6 +651,9 @@ nav {
     gap: 5px;
 }
 
+.case-study-button {
+    margin-right: 20px; /* Adjust the value as needed for spacing */
+}
 
 /* Contact Section */
 .contact {
